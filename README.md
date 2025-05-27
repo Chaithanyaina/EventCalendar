@@ -49,11 +49,9 @@ npm run dev
 
 ## 🌐 Live Demo
 
-Check out the live version here: https://Chaithanyaina.github.io/EventCalendar
+Check out the live version here: https://event-calendar-azure.vercel.app/
 
 ## 🖼️ Screenshots
-
-You can include screenshots like this:
 
 <img src="screenshots/1.png" alt="EventCalendar UI" width="600"/>
 <img src="screenshots/2.png" alt="EventCalendar UI" width="600"/>
