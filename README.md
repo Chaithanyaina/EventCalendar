@@ -2,6 +2,10 @@
 
 A simple and elegant web-based Event Calendar application to help users create, view, and manage events efficiently. This project is built using HTML, CSS, JavaScript, Typescript, React.
 
+## 🌐 Live Demo
+
+Check out the live version here: https://event-calendar-azure.vercel.app/
+
 ## 🚀 Features
 
 * Add, edit, and delete events
@@ -16,19 +20,23 @@ A simple and elegant web-based Event Calendar application to help users create, 
 
 ```bash
 EventCalendar/
-├── public/                 # Static assets
-├── src/                   # Application source code
-│   ├── components/        # Reusable components
-│   ├── App.tsx           # Main App component
-│   ├── main.tsx          # Entry point
-│   └── index.css         # Global styles
-├── screenshots/          # Project screenshots
-├── index.html           # HTML template
-├── package.json         # Project metadata and scripts
-├── tailwind.config.js   # Tailwind configuration
-├── tsconfig.json        # TypeScript configuration
-├── vite.config.ts       # Vite configuration
-└── README.md           # Project documentation
+├── public/                     # Static assets (images, icons, etc.)
+├── screenshots/                # Project screenshots for README or documentation
+├── src/                        # Application source code
+│   ├── components/             # Reusable UI components
+│   │   ├── Calendar.tsx
+│   │   ├── EventCard.tsx
+│   │   ├── EventModal.tsx
+│   ├── App.tsx                 # Main application component
+│   ├── main.tsx                # Entry point for React and Vite
+│   └── index.css               # Global styles and Tailwind imports
+├── index.html                  # HTML template loaded by Vite
+├── package.json                # Project metadata, dependencies, and scripts
+├── tailwind.config.js          # Tailwind CSS configuration
+├── tsconfig.json               # TypeScript compiler configuration
+├── vite.config.ts              # Vite bundler configuration
+└── README.md                   # Project documentation
+
 ```
 
 ## 🛠️ Installation
@@ -47,9 +55,7 @@ npm install
 npm run dev
 ```
 
-## 🌐 Live Demo
 
-Check out the live version here: https://event-calendar-azure.vercel.app/
 
 ## 🖼️ Screenshots
 
