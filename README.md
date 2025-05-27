@@ -53,8 +53,6 @@ Check out the live version here: https://Chaithanyaina.github.io/EventCalendar
 
 ## 🖼️ Screenshots
 
-You can include screenshots like this:
-
 <img src="screenshots/1.png" alt="EventCalendar UI" width="600"/>
 <img src="screenshots/2.png" alt="EventCalendar UI" width="600"/>
 <img src="screenshots/3.png" alt="EventCalendar UI" width="600"/>
