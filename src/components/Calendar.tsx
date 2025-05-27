@@ -125,38 +125,38 @@ export function Calendar() {
     }
   }
   return (
-    <div className="backdrop-blur-lg bg-white/5 rounded-3xl border border-white/10 p-6 shadow-2xl">
+    <div className="backdrop-blur-lg bg-white/5 rounded-3xl border border-white/10 p-3 md:p-4 shadow-2xl h-[calc(100vh-12rem)] flex flex-col">
       {/* Calendar Header */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between mb-4">
         <button
           onClick={() => navigateMonth('prev')}
-          className="p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 group"
+          className="p-2 md:p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 group"
         >
-          <ChevronLeftIcon className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300" />
+          <ChevronLeftIcon className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 group-hover:text-cyan-300" />
         </button>
-        <h2 className="text-3xl font-bold text-white">
+        <h2 className="text-xl md:text-3xl font-bold text-white">
           {format(currentDate, 'MMMM yyyy')}
         </h2>
         <button
           onClick={() => navigateMonth('next')}
-          className="p-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 hover:border-purple-400 transition-all duration-300 group"
+          className="p-2 md:p-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 hover:border-purple-400 transition-all duration-300 group"
         >
-          <ChevronRightIcon className="w-6 h-6 text-purple-400 group-hover:text-purple-300" />
+          <ChevronRightIcon className="w-4 h-4 md:w-6 md:h-6 text-purple-400 group-hover:text-purple-300" />
         </button>
       </div>
       {/* Days of Week Header */}
-      <div className="grid grid-cols-7 gap-2 mb-4">
+      <div className="grid grid-cols-7 gap-1 md:gap-2 mb-2">
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
           <div
             key={day}
-            className="text-center text-slate-400 font-medium py-3"
+            className="text-center text-slate-400 font-medium py-2 text-sm md:text-base"
           >
             {day}
           </div>
         ))}
       </div>
       {/* Calendar Grid */}
-      <div className="grid grid-cols-7 gap-2">
+      <div className="grid grid-cols-7 gap-1 md:gap-2 flex-1">
         {calendarDays.map((day) => {
           const dayEvents = getEventsForDate(day)
           const isCurrentMonth = day.getMonth() === currentDate.getMonth()
@@ -165,21 +165,21 @@ export function Calendar() {
             <div
               key={day.toISOString()}
               className={`
-                min-h-[120px] p-2 rounded-xl border transition-all duration-300 cursor-pointer
+                p-1 md:p-2 rounded-lg border transition-all duration-300 cursor-pointer flex flex-col
                 ${isCurrentMonth ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20' : 'bg-white/2 border-white/5 text-slate-600'}
-                ${isCurrentDay ? 'ring-2 ring-cyan-400 bg-cyan-500/10' : ''}
+                ${isCurrentDay ? 'ring-1 md:ring-2 ring-cyan-400 bg-cyan-500/10' : ''}
               `}
               onClick={() => handleDateClick(day)}
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop(e, day)}
             >
               <div
-                className={`text-sm font-medium mb-2 ${isCurrentDay ? 'text-cyan-400' : 'text-white'}`}
+                className={`text-xs md:text-sm font-medium mb-1 ${isCurrentDay ? 'text-cyan-400' : 'text-white'}`}
               >
                 {format(day, 'd')}
               </div>
-              <div className="space-y-1">
-                {dayEvents.slice(0, 3).map((event) => (
+              <div className="space-y-1 flex-1 overflow-hidden">
+                {dayEvents.slice(0, 2).map((event) => (
                   <EventCard
                     key={event.id}
                     event={event}
@@ -187,9 +187,9 @@ export function Calendar() {
                     onDragStart={() => handleDragStart(event)}
                   />
                 ))}
-                {dayEvents.length > 3 && (
+                {dayEvents.length > 2 && (
                   <div className="text-xs text-slate-400 text-center">
-                    +{dayEvents.length - 3} more
+                    +{dayEvents.length - 2}
                   </div>
                 )}
               </div>

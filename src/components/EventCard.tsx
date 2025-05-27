@@ -23,13 +23,15 @@ export function EventCard({ event, onClick, onDragStart }: EventCardProps) {
         onClick()
       }}
       className={`
-        px-2 py-1 rounded-lg text-xs font-medium border cursor-pointer
+        px-1 py-0.5 md:px-2 md:py-1 rounded text-xs font-medium border cursor-pointer
         hover:scale-105 transition-all duration-200
         ${colorClasses[event.color as keyof typeof colorClasses] || colorClasses.blue}
       `}
     >
-      <div className="truncate">{event.title}</div>
-      {event.time && <div className="text-xs opacity-75">{event.time}</div>}
+      <div className="truncate text-xs">{event.title}</div>
+      {event.time && (
+        <div className="text-xs opacity-75 hidden md:block">{event.time}</div>
+      )}
     </div>
   )
 }
