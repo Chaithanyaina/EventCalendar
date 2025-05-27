@@ -49,7 +49,7 @@ npm run dev
 
 ## 🌐 Live Demo
 
-Check out the live version here: https://Chaithanyaina.github.io/EventCalendar
+Check out the live version here: https://event-calendar-azure.vercel.app/
 
 ## 🖼️ Screenshots
 
